@@ -19,7 +19,9 @@ RUN apt-get update && \
         libpng-dev \
         libtiff-dev \
         libavformat-dev \
-        libpq-dev
+        libpq-dev \
+        libprotobuf-dev \
+        libopenblas-dev
 
 WORKDIR /
 ENV OPENCV_VERSION="3.4.2"
