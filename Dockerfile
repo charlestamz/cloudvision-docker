@@ -21,7 +21,8 @@ RUN apt-get update && \
         libavformat-dev \
         libpq-dev \
         libprotobuf-dev \
-        libopenblas-dev
+        libopenblas-dev \
+        protobuf-compiler 
 
 WORKDIR /
 ENV OPENCV_VERSION="3.4.2"
