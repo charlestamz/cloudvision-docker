@@ -1,7 +1,5 @@
-FROM nvidia/cuda:9.0-devel-ubuntu16.04
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 LABEL maintainer "kanbig"
-ENV CUDNN_VERSION 7.2.1.38
-LABEL com.nvidia.cudnn.version="${CUDNN_VERSION}"
 
 RUN apt-get update && \
         apt-get install -y \
@@ -22,7 +20,8 @@ RUN apt-get update && \
         libpq-dev \
         libprotobuf-dev \
         libopenblas-dev \
-        protobuf-compiler 
+        protobuf-compiler \
+        && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
 ENV OPENCV_VERSION="3.4.2"
